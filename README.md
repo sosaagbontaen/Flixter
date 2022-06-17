@@ -47,7 +47,7 @@ GIF created with local MacBook screen recorder.
 
 ## Notes
 
-Describe any challenges encountered while building the app : I had difficulty taking care of the bookeeping when implementing table views and collection views.
+I had difficulty taking care of the bookeeping when implementing table views and collection views. I am working on spacing the cells in the collection view.
 
 ## Credits
 
