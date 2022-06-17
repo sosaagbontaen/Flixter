@@ -43,7 +43,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [Kap](https://getkap.co/).
+GIF created with local MacBook screen recorder.
 
 ## Notes
 
