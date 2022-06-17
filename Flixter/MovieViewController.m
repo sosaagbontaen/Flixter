@@ -8,6 +8,7 @@
 #import "MovieViewController.h"
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 //remember when a property is set, you must call it with self.myArray
@@ -49,7 +50,7 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    [self.tableView insertSubview:self.refreshControl atIndex:0]
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     
     self.tableView.dataSource = self;
@@ -81,14 +82,21 @@
     [task resume];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UITableViewCell *cell = sender;
+    //you'll need to have gotten an index with indexPathForCell
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSDictionary *dataToPass = self.movies[indexPath.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.movies = dataToPass;
+
 }
-*/
+
 
 @end
