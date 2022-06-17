@@ -20,6 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="nAA-Hs-csJ">
+                                    <rect key="frame" x="0.0" y="267.33333206176758" width="428" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="200" id="ot1-he-a2H" customClass="MovieCell">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="200"/>
@@ -41,7 +45,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZG-dF-i1t">
-                                                    <rect key="frame" x="139" y="42" width="269" height="105"/>
+                                                    <rect key="frame" x="139" y="74" width="269" height="105"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -64,6 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Uh-LQ-cxD"/>
                     <connections>
+                        <outlet property="loadingHUD" destination="nAA-Hs-csJ" id="hlE-hQ-9se"/>
                         <outlet property="tableView" destination="T02-Vm-C3S" id="Yuo-OH-9g2"/>
                     </connections>
                 </viewController>
