@@ -72,6 +72,15 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
+               UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies"
+                                              message:@"The internet connection appears to be offline."
+                                              preferredStyle:UIAlertControllerStyleAlert];
+                
+               UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault
+                  handler:^(UIAlertAction * action) {}];
+                
+               [alert addAction:defaultAction];
+               [self presentViewController:alert animated:YES completion:nil];
            }
            else {
                
