@@ -20,20 +20,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //Returns the number of rows in your table view
-    return 90; //TODO : Change this after you create your cell!
+    return self.movies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     //UITableView *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableView" forIndexPath:indexPath];
     
-    NSLog(@"%@", [NSString stringWithFormat:@"row: %d, section %d", indexPath.row, indexPath.section]);
+    NSDictionary *movie = self.movies[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"row: %d, section %d", indexPath.row, indexPath.section];
+    cell.textLabel.text = movie[@"title"];
     
     return cell;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -50,16 +49,12 @@
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-               //DEBUG: print the data dictionary to the console
-               //NSLog(@"%@", dataDictionary);
                // TODO: Get the array of movies
-               NSArray *dataArray = dataDictionary[@"results"];
-               //DEBUG: For loop through dataArray
-               for (NSString *result in dataArray) {
-                   //NSLog(@"%@",result);
-               }
+               self.movies = dataDictionary[@"results"];
+               
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
+               [self.tableView reloadData];
            }
        }];
     [task resume];
