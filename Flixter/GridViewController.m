@@ -96,14 +96,6 @@
     [task resume];
 }
 
-- (void)viewDidLayoutSubviews {
-   [super viewDidLayoutSubviews];
-
-    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.flowLayout.minimumLineSpacing = 0;
-    self.flowLayout.minimumInteritemSpacing = 0;
-    self.flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 10);
-}
 
 /*
 #pragma mark - Navigation
